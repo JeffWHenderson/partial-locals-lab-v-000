@@ -18,7 +18,8 @@ class Student < ActiveRecord::Base
     if term == ""
       self.all
     else
-      Student.all.select {|person| person.name.include?(term) }
+      #Student.all.select {|person| person.name.include?(term) }
+      Student.all
     end
   end
 end
