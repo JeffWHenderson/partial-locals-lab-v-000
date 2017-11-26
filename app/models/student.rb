@@ -18,4 +18,5 @@ class Student < ActiveRecord::Base
     if name == ""
       self.all
     end
+  end
 end
