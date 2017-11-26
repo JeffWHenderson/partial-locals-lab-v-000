@@ -18,7 +18,8 @@ class Student < ActiveRecord::Base
     if term == ""
       self.all
     else
-      Student.all.select {|person| person.name.downcase.include?(term) }
+      term.titleize
+      #Student.all.select {|person| person.name.downcase.include?(term) }
     end
   end
 end
