@@ -14,11 +14,11 @@ class Student < ActiveRecord::Base
   has_many :classroom_students
   has_many :classrooms, through: :classroom_students
 
-  def self.search(name)
+  def self.search(term)
     if name == ""
-      self.all
+      term.all
     else
-      Student.all.select {|person| person.name.include?(name) }
+      Student.all.select {|person| person.name.include?(term) }
     end
   end
 end
