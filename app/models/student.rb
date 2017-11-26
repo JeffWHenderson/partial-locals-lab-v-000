@@ -17,6 +17,8 @@ class Student < ActiveRecord::Base
   def self.search(name)
     if name == ""
       self.all
+    else
+      Student.all.select {|person| person.include?(name) }
     end
   end
 end
